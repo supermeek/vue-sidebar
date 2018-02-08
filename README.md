@@ -1,6 +1,6 @@
-# vue-sidebar
+# vue-sidebar 基于vue框架实现的简单侧边栏模板
 
-> A Vue.js project
+> A Vue project 基本框架安装
 
 ## Install Setup
 
@@ -56,35 +56,66 @@ $ Vue.use(ElementUI)
 
 ```
 
+# Vue 脚手架中使用JQuery的几种方式
+
 ## Jquery Install Setup
 
->这种方式不会影响原来VUE文件中的$的使用，完全可行；但是需要每个vue文件都引入一遍
+>1.这种方式不会影响原来VUE文件中的$的使用，但是需要每个vue文件都引入一遍
 
 ``` javascript
 <script>
 import '../assets/js/jquery-1.10.2.min.js'
 export default {
  data() {
-  return {
- },
- watch: {
- },
- created: function() {
- },
- methods: {
-  list() {
-   this.$router.push({
-    path: 'list'
-   });
-  },
- },
+ }
 }
-$(document).ready(function(){
-  $('.span123').click(function(){
-    alert('123')
-  })
+$(function(){
+    alert('可以使用jquery')
 })
 </script>
+```
+>2.手动下载jQuery 放在static目录下 => static/js/jquery.min.js
+
+``` javascript
+alias: {
+  // 1.定义别名和插件位置
+  "jquery": path.resolve(__dirname, '../static/js/jquery.min.js')
+},
+plugins: [
+  // 2. 配置全局使用 jquery
+  new webpack.ProvidePlugin({
+    $: "jquery",
+    jQuery: "jquery",
+    jquery: "jquery",
+    "window.jQuery": "jquery"
+  })
+ ]
+```
+
+>3.通过npm安装依赖引入
+
+``` bash
+#安装依赖
+$ npm install jquery -S
+
+```
+
+``` javascript
+#2.修改webpack配置文件
+
+alias: {
+  #1.定义别名和插件位置
+  "jquery": path.resolve(__dirname, '../static/js/jquery.min.js')
+},
+plugins: [
+  #2. 配置全局使用 jquery
+  new webpack.ProvidePlugin({
+    $: "jquery",
+    jQuery: "jquery",
+    jquery: "jquery",
+    "window.jQuery": "jquery"
+  })
+ ]
 
 ```
 
