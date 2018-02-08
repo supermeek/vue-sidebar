@@ -39,12 +39,13 @@ export default {
     position: absolute;
     height: 1.5rem;
     line-height: 1.6rem;
+    font-size: 14px;
     color: #fff;
 }
 .icon-menu{
-    right: 0.5rem;
+    left: 0.5rem;
 }
 .icon-dot-3{
-    left: 0.5rem;
+    right: 0.5rem;
 }
 </style>

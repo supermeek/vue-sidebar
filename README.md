@@ -1,7 +1,7 @@
 
 <!-- 基于vue框架实现的简单侧边栏模板 -->
 
-# vue-sidebar 基于vue框架实现的简单侧边栏模板
+# vue-sidebar 基于vue框架实现的简单侧边栏导航案例，适用于新手
 
 > A Vue project 基本框架安装
 
@@ -64,7 +64,7 @@ $ Vue.use(ElementUI)
 
 ## Jquery Install Setup
 
->1.这种方式不会影响原来VUE文件中的$的使用，但是需要每个vue文件都引入一遍
+> 1.这种方式不会影响原来VUE文件中的$的使用，但是需要每个vue文件都引入一遍
 
 ``` javascript
 <script>
@@ -78,7 +78,7 @@ $(function(){
 })
 </script>
 ```
->2.手动下载jQuery 放在static目录下 => static/js/jquery.min.js
+> 2.手动下载jQuery 放在static目录下 => static/js/jquery.min.js
 
 ``` javascript
 alias: {
@@ -96,7 +96,7 @@ plugins: [
  ]
 ```
 
->3.通过npm安装依赖引入
+> 3.通过npm安装依赖引入
 
 ``` bash
 # 安装依赖
@@ -124,5 +124,43 @@ plugins: [
 ```
 
 <!-- 知识点备注 -->
+# Vue 学习笔记
+
+## Vue 中的 router-link
+
+> 给<router-link>绑定事件，即在它渲染出来的标签上监听click或其他事件
+
+``` html
+//在事件后添加修饰符native即可解决(tag可不加 默认为a标签)
+
+<router-link to='/home' @click.native='toggle' >page2</router-link>
+
+```
+
+## Vue中的 ref 和 $refs
+
+> 通过ref获取DOM元素
+
+``` html
+<input type="text" ref="box" />
+
+<ul>
+  <li v-for="item in list" ref="li">{{item.name}}</li>
+</ul>
+
+```
+``` javascript
+methods:{
+  getElement:function(){
+    this.$refs.box.value = "name"
+    this.$refs.li[6].toggleActive()
+  }
+}
+
+```
+
+## Vue中的 v-for $index $refs $children
+
+> $index返回循环中的索引 $refs可获取循环中的某元素 $children返回组件集合
 
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).

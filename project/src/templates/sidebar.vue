@@ -1,6 +1,6 @@
 <template>
   <div class="menuWrapper" ref="menuBox">
-    <div class="menuCover"  v-if="menuVisible" @click="hideMenu"></div>
+    <div class="menuCover" v-if="menuVisible" @click="hideMenu"></div>
     <div class="sideBar">
       <div class="currentUser">
          <img src="../assets/img/default.jpg">
@@ -9,14 +9,6 @@
       <div class="myMenu">
           <slot></slot>
       </div>
-      <!-- <ul>
-        <li><router-link to="/home"><i class="icon-calendar-1"></i>首页</router-link></li>
-        <li><router-link to="/page02"><i class="icon-user-o"></i>个人中心</router-link></li>
-        <li><router-link to="/page03"><i class="icon-note"></i>生活记录</router-link></li>
-        <li><router-link to="/page04"><i class="icon-music"></i>菜单菜单</router-link></li>
-        <li><router-link to="/page05"><i class="icon-comment"></i>信息</router-link></li>
-        <li><router-link to="/page06"><i class="icon-cog"></i>设置</router-link></li>
-      </ul> -->
     </div>
   </div>
 </template>
@@ -29,16 +21,20 @@ export default {
     }
   },
   props: {
+    // 父页面传过来的值
     menuVisible: {
-      type: Boolean
+      type: Boolean,
+      default: false
     }
   },
   watch: {
+    // 监听App.vue页面的visible的变化调用函数
     menuVisible () {
       this.toggleShow()
     }
   },
   created () {
+
   },
   methods: {
     hideMenu () {
@@ -48,24 +44,26 @@ export default {
       var stage = 0
       var current = 0
       if (this.menuVisible) {
-        stage = 20
+        stage = 10
         current = -200
       } else {
-        stage = -20
+        stage = -10
         current = 0
       }
       this.animation(stage, current)
     },
-    animation (index, move) {
+    animation (add, move) {
       const self = this
       var timer = null
+      var index = 0
       timer = setInterval(function () {
-        move = move + index
+        move = move + add
+        index++
         self.$refs.menuBox.style.left = move + 'px'
+        if (index === 20) {
+          clearInterval(timer)
+        }
       }, 20)
-      setTimeout(function () {
-        clearInterval(timer)
-      }, 200)
     }
   }
 }

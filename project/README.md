@@ -1,6 +1,6 @@
 <!-- 基于vue框架实现的简单侧边栏模板 -->
 
-# vue-sidebar 基于vue框架实现的简单侧边栏模板
+# vue-sidebar 基于vue框架实现的简单侧边栏导航案例
 
 > A Vue project 基本框架安装
 
