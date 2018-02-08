@@ -1,6 +1,6 @@
 <template>
-  <div class="menuWrapper" v-if="menuVisible">
-    <div class="menuCover" @click="hideMenu"></div>
+  <div class="menuWrapper" ref="menuBox">
+    <div class="menuCover"  v-if="menuVisible" @click="hideMenu"></div>
     <div class="sideBar">
       <div class="currentUser">
          <img src="../assets/img/default.jpg">
@@ -42,11 +42,30 @@ export default {
   },
   methods: {
     hideMenu () {
-      console.log('点击了menu cover')
       this.$emit('update:menuVisible', !this.menuVisible)
     },
     toggleShow () {
-
+      var stage = 0
+      var current = 0
+      if (this.menuVisible) {
+        stage = 20
+        current = -200
+      } else {
+        stage = -20
+        current = 0
+      }
+      this.animation(stage, current)
+    },
+    animation (index, move) {
+      const self = this
+      var timer = null
+      timer = setInterval(function () {
+        move = move + index
+        self.$refs.menuBox.style.left = move + 'px'
+      }, 20)
+      setTimeout(function () {
+        clearInterval(timer)
+      }, 200)
     }
   }
 }
@@ -54,28 +73,26 @@ export default {
 
 <style>
 .menuWrapper{
-  width: 16rem;
+  width: 200px;
   height: 100%;
-  z-index: 999;
   position: absolute;
   top: 0;
   bottom: 0;
-  -webkit-transition: all ease 0.4s;
-  -o-transition: all ease 0.4s;
-  transition: all ease 0.4s;
+  left: -200px;
 }
 .menuCover{
   background-color: rgba(0,0,0,0.2);
-  width: 8rem;
-  height: 100%;
-  position: absolute;
+  position: fixed;
+  left: 0;
   right: 0;
+  top: 0;
+  bottom: 0;
+  height: 100%;
 }
 .sideBar{
-  /*left: -8rem;*/
   position: relative;
   height: 100%;
-  width: 8rem;
+  width: 200px;
   background-color: rgba(0,0,0,0.9);
   font-size: 0.6rem;
 }
@@ -140,7 +157,7 @@ export default {
 /*小内容*/
 .el-collapse-item__content{
   color: #ddd;
-background-color: #555;
+  background-color: #555;
   border-top: 1px solid red;
   padding: 0;
 }

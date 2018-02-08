@@ -1,6 +1,8 @@
-# vue-sidebar
+<!-- 基于vue框架实现的简单侧边栏模板 -->
 
-> A Vue.js project
+# vue-sidebar 基于vue框架实现的简单侧边栏模板
+
+> A Vue project 基本框架安装
 
 ## Install Setup
 
@@ -11,7 +13,7 @@ $ npm install --global vue-cli
 # 创建一个基于 webpack 模板的新项目
 $ vue init webpack my-project-name
 
-# 进入闯将的项目目录
+# 进入创建的项目目录
 $ cd my-project-name
 
 # 安装依赖

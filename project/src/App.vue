@@ -55,7 +55,6 @@ export default {
   },
   methods: {
     showSideMenu () {
-      console.log('hahaha')
       this.visible = true
     }
   }

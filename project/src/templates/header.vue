@@ -1,5 +1,5 @@
 <template>
-  <div class="menuBtn" @click="showMenu">
+  <div class="menuBtn">
     <slot></slot>
   </div>
 </template>
@@ -17,7 +17,7 @@ export default {
   },
   methods: {
     showMenu () {
-      console.log(this.menuVisible)
+      // console.log(this.menuVisible)
     }
   }
 }

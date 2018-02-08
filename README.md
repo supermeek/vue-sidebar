@@ -1,3 +1,6 @@
+
+<!-- 基于vue框架实现的简单侧边栏模板 -->
+
 # vue-sidebar 基于vue框架实现的简单侧边栏模板
 
 > A Vue project 基本框架安装
@@ -55,6 +58,7 @@ $ import ‘element-ui/lib/theme-default/index.css‘
 $ Vue.use(ElementUI)
 
 ```
+<!-- Vue 脚手架中使用JQuery的几种方式 -->
 
 # Vue 脚手架中使用JQuery的几种方式
 
@@ -115,8 +119,10 @@ plugins: [
     jquery: "jquery",
     "window.jQuery": "jquery"
   })
- ]
+]
 
 ```
+
+<!-- 知识点备注 -->
 
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
