@@ -11,7 +11,7 @@ $ npm install --global vue-cli
 # 创建一个基于 webpack 模板的新项目
 $ vue init webpack my-project-name
 
-# 进入闯将的项目目录
+# 进入创建的项目目录
 $ cd my-project-name
 
 # 安装依赖
@@ -56,5 +56,36 @@ $ Vue.use(ElementUI)
 
 ```
 
+## Jquery Install Setup
+
+>这种方式不会影响原来VUE文件中的$的使用，完全可行；但是需要每个vue文件都引入一遍
+
+``` javascript
+<script>
+import '../assets/js/jquery-1.10.2.min.js'
+export default {
+ data() {
+  return {
+ },
+ watch: {
+ },
+ created: function() {
+ },
+ methods: {
+  list() {
+   this.$router.push({
+    path: 'list'
+   });
+  },
+ },
+}
+$(document).ready(function(){
+  $('.span123').click(function(){
+    alert('123')
+  })
+})
+</script>
+
+```
 
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
