@@ -95,20 +95,20 @@ plugins: [
 >3.通过npm安装依赖引入
 
 ``` bash
-#安装依赖
+# 安装依赖
 $ npm install jquery -S
 
 ```
 
 ``` javascript
-#2.修改webpack配置文件
+// 修改webpack配置文件
 
 alias: {
-  #1.定义别名和插件位置
+  // 定义别名和插件位置
   "jquery": path.resolve(__dirname, '../static/js/jquery.min.js')
 },
 plugins: [
-  #2. 配置全局使用 jquery
+  // 配置全局使用 jquery
   new webpack.ProvidePlugin({
     $: "jquery",
     jQuery: "jquery",
