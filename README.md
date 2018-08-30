@@ -65,7 +65,9 @@ $ Vue.use(ElementUI)
 ``` bash
 # 安装 echarts依赖
 $ npm install echarts -S
+```
 
+``` javascript
 # 在 main.js 中引入 (全局引入)
 $ import echarts from 'echarts'
 $ Vue.prototype.$echarts = echarts
@@ -74,11 +76,12 @@ $ Vue.prototype.$echarts = echarts
 
 # 在 Hello.vue 中引入 (按需引入)
 # 引入基本模板、柱状图组件、提示框和title组件
+<script>
 let echarts = require('echarts/lib/echarts')
 require('echarts/lib/chart/bar')
 require('echarts/lib/component/tooltip')
 require('echarts/lib/component/title')
-
+</script>
 #这里之所以使用 require 而不是 import，是因为 require 可以直接从 node_modules 中查找，而 import 必须把路径写全
 ```
 
