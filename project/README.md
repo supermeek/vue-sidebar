@@ -43,13 +43,13 @@ $ npm run build --report
 ## Element Install Setup
 
 ``` bash
-# 安装 Element-UI 模块
-$ npm install element-ui -S
-
 # 安装 loader 模块
 $ cnpm install style-loader -D
 $ cnpm install css-loader -D
 $ cnpm install file-loader -D
+
+# 安装 Element-UI 模块
+$ npm install element-ui -S
 
 # 在 main.js 中引入
 $ import ElementUI from ‘element-ui‘

@@ -10,6 +10,7 @@
 ``` bash
 # 全局安装 vue-cli
 $ npm install --global vue-cli
+$ cnpm install vue-cli -g (或者使用国内镜像安装)
 
 # 创建一个基于 webpack 模板的新项目
 $ vue init webpack my-project-name
@@ -44,13 +45,13 @@ $ npm run build --report
 ## Element Install Setup
 
 ``` bash
-# 安装 Element-UI 模块
-$ npm install element-ui -S
-
 # 安装 loader 模块
 $ cnpm install style-loader -D
 $ cnpm install css-loader -D
 $ cnpm install file-loader -D
+
+# 安装 Element-UI 模块
+$ npm install element-ui -S
 
 # 在 main.js 中引入
 $ import ElementUI from ‘element-ui‘
