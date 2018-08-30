@@ -69,18 +69,18 @@ $ npm install echarts -S
 # 在 main.js 中引入 (全局引入)
 $ import echarts from 'echarts'
 $ Vue.prototype.$echarts = echarts
-<!-- 这里echarts初始化应在钩子函数mounted()中，这个钩子函数是在el 被新创建的 vm.$el 替换，并挂载到实例上去之后调用 -->
+#这里echarts初始化应在钩子函数mounted()中，这个钩子函数是在el 被新创建的 vm.$el 替换，并挂载到实例上去之后调用
 
 # 在 Hello.vue 中引入 (按需引入)
-// 引入基本模板
+# 引入基本模板
 let echarts = require('echarts/lib/echarts')
-// 引入柱状图组件
+# 引入柱状图组件
 require('echarts/lib/chart/bar')
-// 引入提示框和title组件
+# 引入提示框和title组件
 require('echarts/lib/component/tooltip')
 require('echarts/lib/component/title')
 
-<!-- 这里之所以使用 require 而不是 import，是因为 require 可以直接从 node_modules 中查找，而 import 必须把路径写全 -->
+#这里之所以使用 require 而不是 import，是因为 require 可以直接从 node_modules 中查找，而 import 必须把路径写全
 ```
 
 
