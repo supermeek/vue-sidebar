@@ -44,12 +44,12 @@ $ npm run build --report
 
 ## Axios Install Setup
 ``` bash
-#使用 cnpm 安装 axios
+# 使用 cnpm 安装 axios
 $ cnpm install axios -S
 
-##方案一：改写原型链
+# 方案一：改写原型链
 
-#首先在 main.js 中引入 axios
+# 首先在 main.js 中引入 axios
 $ import axios from 'axios'
 $ Vue.prototype.$ajax = axios
 
