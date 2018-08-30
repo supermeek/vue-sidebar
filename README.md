@@ -1,7 +1,7 @@
 
 <!-- 基于vue框架实现的简单侧边栏模板 -->
 
-# vue-sidebar 基于vue框架实现的简单侧边栏导航案例，适用于新手
+# vue-sidebar 基于vue框架实现的简单侧边栏导航
 
 > A Vue project 基本框架安装
 
@@ -40,6 +40,30 @@ $ npm run build
 # build for production and view the bundle analyzer report
 $ npm run build --report
 
+```
+
+## Axios Install Setup
+``` bash
+#使用 cnpm 安装 axios
+$ cnpm install axios -S
+
+##方案一：改写原型链
+
+#首先在 main.js 中引入 axios
+$ import axios from 'axios'
+$ Vue.prototype.$ajax = axios
+
+methods: {
+  submitForm () {
+    this.$ajax({
+      method: 'post',
+      url: '/user',
+      data: {
+        name: 'wise',
+        info: 'wrong'
+      }
+   })
+}
 ```
 
 ## Element Install Setup
