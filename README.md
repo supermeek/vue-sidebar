@@ -11,6 +11,7 @@
 # 全局安装 vue-cli
 $ npm install --global vue-cli
 $ cnpm install vue-cli -g (或者使用国内镜像安装)
+$ npm install @vue/cli -g (vue 3.0)
 
 # 创建一个基于 webpack 模板的新项目
 $ vue init webpack my-project-name
